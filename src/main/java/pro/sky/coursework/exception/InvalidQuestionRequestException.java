@@ -2,7 +2,7 @@ package pro.sky.coursework.exception;
 
 import static java.lang.String.format;
 
-public class InvalidQuestionRequestException extends RuntimeException {
+public class InvalidQuestionRequestException extends Exception {
     private final int requestedAmount;
     private final int availableAmount;
 

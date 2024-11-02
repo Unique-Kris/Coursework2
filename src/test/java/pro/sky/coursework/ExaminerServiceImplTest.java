@@ -25,7 +25,7 @@ class ExaminerServiceImplTest {
     }
 
     @Test
-    void testGetQuestions_ValidAmount() {
+    void testGetQuestions_ValidAmount() throws InvalidQuestionRequestException {
         Set<Question> allQuestions = new HashSet<>();
         allQuestions.add(new Question("What is Java?", "A programming language"));
         allQuestions.add(new Question("What is OOP?", "Object Oriented Programming"));
@@ -59,7 +59,7 @@ class ExaminerServiceImplTest {
     }
 
     @Test
-    void testGetQuestions_ExactAmount() {
+    void testGetQuestions_ExactAmount() throws InvalidQuestionRequestException {
         Set<Question> allQuestions = new HashSet<>();
         allQuestions.add(new Question("What is Java?", "A programming language"));
         allQuestions.add(new Question("What is OOP?", "Object Oriented Programming"));

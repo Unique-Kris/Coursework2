@@ -21,11 +21,11 @@ public class ExaminerServiceImpl implements ExaminerService {
     }
 
     @Override
-    public Collection<Question> getQuestions(int amount) {
+    public Collection<Question> getQuestions(int amount) throws InvalidQuestionRequestException {
         Collection<Question> allQuestions = questionService.getAll();
         int size = questionService.getSize();
         if (amount <= 0 || amount > allQuestions.size()) {
-            log.error("Wrong requested amount, should be less then" + size);
+            log.error("Wrong requested amount, should be less then " + size);
             throw new InvalidQuestionRequestException(amount, size);
         }
         if (amount == allQuestions.size()) {
